@@ -17,53 +17,56 @@
           <span>
             <img src="./images/build.svg" alt="Selo Rocketseat" />
           </span>
-          <img src="./images/" alt="Foto pessoal" />
+          <img
+            src="https://lorempixel.com/184/185/people/"
+            alt="Foto pessoal"
+          />
         </div>
-        <h1>Henrique Alves</h1>
-        <a href="https://instagram.com/henrick_reis">
-          <img src="./images/github.svg" alt="" />
+        <h1 id="userName">Henrique Alves</h1>
+        <a href="https://github.com/henriquedev00" target="_blank">
+          <img src="./images/github.svg" alt="ícone github" />
           henriquedev00
         </a>
         <p>An instructor focused on helping people start programming for web</p>
-        <ul>
-          <li>
-            <a href="#">
-              <img
-                src="./images/youtube.svg"
-                alt="ícone youtube"
-                target="_blank"
-              />
+        <ul id="socialLinks">
+          <!-- <li>
+            <a href="#" target="_blank">
+              <img src="./images/youtube.svg" alt="ícone youtube" />
+            </a>
+          </li> -->
+          <li class="facebook">
+            <a href="#" target="_blank">
+              <img src="./images/facebook.svg" alt="ícone facebook" />
             </a>
           </li>
-          <li>
-            <a href="#">
-              <img
-                src="./images/facebook.svg"
-                alt="ícone facebook"
-                target="_blank"
-              />
+          <li class="instagram">
+            <a href="https://www.instagram.com/henrick_reis/" target="_blank">
+              <img src="./images/instagram.svg" alt="ícone instagram" />
             </a>
           </li>
-          <li>
-            <a href="#">
-              <img
-                src="./images/instagram.svg"
-                alt="ícone instagram"
-                target="_blank"
-              />
-            </a>
-          </li>
-          <li>
-            <a href="#">
-              <img
-                src="./images/twitter.svg"
-                alt="ícone twitter"
-                target="_blank"
-              />
+          <li class="twitter">
+            <a href="#" target="_blank">
+              <img src="./images/twitter.svg" alt="ícone twitter" />
             </a>
           </li>
         </ul>
       </div>
     </main>
+    <script>
+      const LinksSocialMedia = {
+        github: "henriquedev00",
+        facebook: "henriquejadiel",
+        instagram: "henrick_reis",
+        twitter: "reis_henriquee"
+      }
+      function changeSocialMediaLinks() {
+        for(let li of socialLinks.children) {
+          const social = li.getAttribute('class');
+          li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`;
+          alert(li.children[0].href);
+        }
+      }
+      changeSocialMediaLinks();
+    </script>
   </body>
 </html>
